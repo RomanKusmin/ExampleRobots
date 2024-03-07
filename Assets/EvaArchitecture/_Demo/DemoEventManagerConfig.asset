@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 933a49b1e71947bd9cdca58ba59eee19, type: 3}
+  m_Name: DemoEventManagerConfig
+  m_EditorClassIdentifier: 
+  _eventConfigs:
+  - {fileID: 11400000, guid: 598cb44a1dce05e4ead375df1e00f1d2, type: 2}
+  - {fileID: 11400000, guid: 5cd5ed7fb223b4a4ab92d9f4451a4b7f, type: 2}
+  - {fileID: 11400000, guid: 0743d2ee5ca097341837465ab2563f39, type: 2}
+  - {fileID: 11400000, guid: 7c7fec2a81129694c9f8bebca1977272, type: 2}
+  - {fileID: 11400000, guid: feb871494aa62dc47a8a94580f31b2eb, type: 2}

@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cc07269ac2d4eccbe03ca33c0d0c3ca, type: 3}
+  m_Name: BotMechConfig
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 7077388476002743579, guid: 91ed5333f62aea94596d813a41daf59d, type: 3}
+  _health: 100
