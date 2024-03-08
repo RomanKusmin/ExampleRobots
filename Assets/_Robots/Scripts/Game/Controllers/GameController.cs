@@ -97,7 +97,6 @@ namespace Game.Controllers
             _services = new List<IService>
             {
                 new StandardInputService(),
-                new AudioService()
             };
         }
 
