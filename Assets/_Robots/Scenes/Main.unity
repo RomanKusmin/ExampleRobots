@@ -376,8 +376,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1141738844}
-  - component: {fileID: 1141738843}
   - component: {fileID: 1141738845}
+  - component: {fileID: 1141738843}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
