@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using EvaArchitecture._Bases;
 using EvaArchitecture.Configs;
+using EvaArchitecture.Core.Configs;
 using EvaArchitecture.Logger;
 using UnityEngine;
 
@@ -38,7 +39,10 @@ namespace EvaArchitecture.Core
         {
             var eventManager = Eva.Instance;
             if (eventManager == null)
+            {
+                Log.Error(() => $"Eva, GetEvent, eventManager == null");
                 return null;
+            }
 
             var eventManagerConfig = eventManager.EventManagerConfig;
 
