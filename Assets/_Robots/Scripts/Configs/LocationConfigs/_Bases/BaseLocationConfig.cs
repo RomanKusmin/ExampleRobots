@@ -9,29 +9,31 @@ using EvaArchitecture.EvaHelpers;
 using Services.AudioServices._Bases;
 using Services.AudioServices.Configs;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace Configs.LocationConfigs._Bases
 {
     [Serializable]
     public abstract class BaseLocationConfig : BaseConfig
     {
-        [SerializeField] private List<AudioClipConfig> _audioClipConfigs;
+        [SerializeField] protected NavMeshData _navMeshData;
         [SerializeField] private PlayerConfig _playerConfig;
         [SerializeField] private PlayerStateConfig _initialPlayerStateConfig;
         [SerializeField] private BotConfig _botConfig;
         [SerializeField] private BotStateConfig _initialBotStateConfig;
         [SerializeField] private int _botsCount;
         [SerializeField] private List<PlayerUiWindowConfig> _playerUiWindowConfigs;
-
-        public List<AudioClipConfig> AudioClipConfigs => _audioClipConfigs;
-        public IEnumerable<AudioClipConfig> BackgroundAudioClipConfigs =>
-            _audioClipConfigs.IsNull() ? null : _audioClipConfigs.Where(it => !it.IsNull() && it.AudioKind == AudioKind.Background);
+        [SerializeField] private List<AudioClipConfig> _audioClipConfigs;
         
+        public NavMeshData NavMeshData => _navMeshData;
         public PlayerConfig PlayerConfig => _playerConfig;
         public PlayerStateConfig InitialPlayerStateConfig => _initialPlayerStateConfig;
         public BotConfig BotConfig => _botConfig;
         public BotStateConfig InitialBotStateConfig => _initialBotStateConfig;
         public int BotsCount => _botsCount;
         public List<PlayerUiWindowConfig> PlayerUiWindowConfigs => _playerUiWindowConfigs;
+        public List<AudioClipConfig> AudioClipConfigs => _audioClipConfigs;
+        public IEnumerable<AudioClipConfig> BackgroundAudioClipConfigs =>
+            _audioClipConfigs.IsNull() ? null : _audioClipConfigs.Where(it => !it.IsNull() && it.AudioKind == AudioKind.Background);
     }
 }

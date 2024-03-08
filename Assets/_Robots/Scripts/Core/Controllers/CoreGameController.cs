@@ -75,7 +75,9 @@ namespace Core.Controllers
             if (locationConfig.IsNull())
                 return (bool)Log.Error(() => $"locationConfig is null");
 
-            if (!CreateAndInitLocation(_locationParent, locationConfig))
+            DestroyCurrentLocation();
+
+            if (!CreateLocation(_locationParent, locationConfig))
                 return (bool)Log.Error(() => $"CreateAndInitLocation FAILED");
 
             var uiControllerConfig = _gameConfig.UiControllerConfig;
@@ -130,9 +132,9 @@ namespace Core.Controllers
             return true;
         }
 
-        protected virtual bool CreateAndInitLocation(Transform parent, BaseLocationConfig locationConfig)
+        protected virtual bool CreateLocation(Transform parent, BaseLocationConfig locationConfig)
         {
-            var locationGameObject = CreateLocation(parent, locationConfig);
+            var locationGameObject = CreateLocationObject(parent, locationConfig);
             if (locationGameObject.IsNull())
                 return (bool)Log.Error(() => $"CreateLocation FAILED");
 
@@ -146,7 +148,17 @@ namespace Core.Controllers
             return true;
         }
 
-        protected virtual GameObject CreateLocation(Transform parent, BaseLocationConfig locationConfig)
+        protected virtual bool DestroyCurrentLocation()
+        {
+            if (_locationController.IsNull())
+                return true;
+            
+            _locationController.DestroyLocation();
+            _locationController = null;
+            return true;
+        }
+
+        protected virtual GameObject CreateLocationObject(Transform parent, BaseLocationConfig locationConfig)
         {
             if (locationConfig.IsNull())
                 return null;

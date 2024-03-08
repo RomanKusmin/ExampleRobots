@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GameConfig
   m_EditorClassIdentifier: 
   _prefab: {fileID: 0}
-  _initialLocationConfig: {fileID: 11400000, guid: 1664a469e1bbf814e893374db59122d4,
+  _initialLocationConfig: {fileID: 11400000, guid: b024ab076408ba243b51bb72a8bc4091,
     type: 2}
   _uiControllerConfig: {fileID: 11400000, guid: bfeb6a763a095c84fa883717c45f6695,
     type: 2}

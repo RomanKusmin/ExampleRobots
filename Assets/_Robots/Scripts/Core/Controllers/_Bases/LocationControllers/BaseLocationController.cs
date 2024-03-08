@@ -7,6 +7,7 @@ using EvaArchitecture.Logger;
 using Game.Controllers.PlayerControllers;
 using Models.CharacterModels.PlayerModels;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace Core.Controllers._Bases.LocationControllers
 {
@@ -15,10 +16,12 @@ namespace Core.Controllers._Bases.LocationControllers
     {
         [SerializeField] protected Transform _playersParent;
         [SerializeField] protected Transform _botsParent;
-        
+
         protected BaseLocationConfig _locationConfig;
         protected GameObject _playerGameObject;
         protected PlayerModel _playerModel;
+        
+        private NavMeshDataInstance _navMeshDataInstance;
 
         public BaseLocationConfig LocationConfig => _locationConfig;
 
@@ -27,6 +30,10 @@ namespace Core.Controllers._Bases.LocationControllers
         public virtual bool Init(BaseLocationConfig locationConfig)
         {
             _locationConfig = locationConfig;
+
+            if (!_locationConfig.IsNull()
+                && !_locationConfig.NavMeshData.IsNull())
+                _navMeshDataInstance = NavMesh.AddNavMeshData(_locationConfig.NavMeshData);
             
             var playerGameObject = CreatePlayer(_playersParent);
             if (playerGameObject.IsNull())
@@ -37,7 +44,15 @@ namespace Core.Controllers._Bases.LocationControllers
 
             return true;
         }
-        
+
+        public virtual bool DestroyLocation()
+        {
+            if (!_navMeshDataInstance.IsNull())
+                NavMesh.RemoveNavMeshData(_navMeshDataInstance);
+
+            return true;
+        }
+
         protected virtual GameObject CreatePlayer(Transform parent)
         {
             if (_locationConfig.IsNull())

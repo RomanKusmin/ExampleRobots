@@ -8,5 +8,6 @@ namespace Core.Controllers._Bases.Interfaces
         public BaseLocationConfig LocationConfig { get; }
         public PlayerModel PlayerModel { get; }
         public bool Init(BaseLocationConfig locationConfig);
+        public bool DestroyLocation();
     }
 }
