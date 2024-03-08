@@ -44,7 +44,9 @@ namespace Game.Controllers.LocationControllers
 
                 var bot = Instantiate(botPrefab, _botsParent.transform);
                 bot.transform.position = new Vector3(pos.x, pos.y, z);
-                bot.name = $"{botPrefab.name} ({i})";
+                var botName = $"{botPrefab.name} ({i})";
+                Log.Info(() => $"botName={botName}, pos={bot.transform.position}");
+                bot.name = botName;
             }
             return true;
         }

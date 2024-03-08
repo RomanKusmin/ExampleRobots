@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc9d92d67ac44b029dd4588230ec5c73, type: 3}
+  m_Name: CItyLocation
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 6549871753124650653, guid: 69bfcca2368ba5247a7e9e1ff4fa8307, type: 3}
+  _navMeshData: {fileID: 23800000, guid: 380bd4feab002f3408fa7bcfd31744a7, type: 2}
+  _playerConfig: {fileID: 11400000, guid: 2bbc00512232a664d8c37b0b98316a49, type: 2}
+  _initialPlayerStateConfig: {fileID: 11400000, guid: 334a1de800af7bb438b75ce53b03baa1,
+    type: 2}
+  _botConfig: {fileID: 11400000, guid: 191c88424c7db82458a2d08c07c4d5c0, type: 2}
+  _initialBotStateConfig: {fileID: 11400000, guid: 22af7af0d3e6cfc48a3b0f9bc5f26f2f,
+    type: 2}
+  _botsCount: 12
+  _playerUiWindowConfigs:
+  - {fileID: 11400000, guid: 6e6f6c1c7559c42449bd89778eda0498, type: 2}
+  _audioClipConfigs:
+  - {fileID: 11400000, guid: 7474fe4bb18d56d46abc2bb17dd07eb1, type: 2}
+  - {fileID: 11400000, guid: b09706930142f004bb2a7af1369fa494, type: 2}
+  - {fileID: 11400000, guid: f4d2f495617000b4782a823c283868d2, type: 2}
