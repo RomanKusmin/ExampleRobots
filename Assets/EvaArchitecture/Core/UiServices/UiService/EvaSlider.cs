@@ -37,14 +37,14 @@ namespace EvaArchitecture.Core.UiServices.UiService
             else if (model is ValueTuple<int, int> intValueTuple)
             {
                 var (value, maxValue) = intValueTuple;
+                _slider.maxValue = maxValue; // first sets max value, to avoid auto rescale of value 
                 _slider.value = value;
-                _slider.maxValue = maxValue;
             }
             else if (model is ValueTuple<float, float> floatValueTuple)
             {
                 var (value, maxValue) = floatValueTuple;
+                _slider.maxValue = maxValue; // first sets max value, to avoid auto rescale of value
                 _slider.value = value;
-                _slider.maxValue = maxValue;
             }
         }
     }
